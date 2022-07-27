@@ -1,5 +1,6 @@
 package com.udacity.bootstrap.web;
 
+import com.udacity.bootstrap.entity.Dog;
 import com.udacity.bootstrap.service.DogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,21 +21,25 @@ public class DogController {
         this.dogService = dogService;
     }
 
-    @GetMapping("/breed")
-    public ResponseEntity<List<String>> getDogBreed() {
+    @GetMapping("/dogs")
+    public ResponseEntity<List<Dog>> getAllDogs() {
+        List<Dog> list = dogService.retrieveDogs();
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @GetMapping("/dogs/breed")
+    public ResponseEntity<List<String>> getDogBreeds() {
         List<String> list = dogService.retrieveDogBreed();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @GetMapping({"/breedById/{id}", "/breedById"})
-    public ResponseEntity<List<String>> getDogBreedById(@PathVariable(required = false) Long id) {
-        if (id == null) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
-        List<String> list = dogService.retrieveDogBreedById(id);
-        return new ResponseEntity<>(list, HttpStatus.OK);
+    @GetMapping("/{id}/breed")
+    public ResponseEntity<String> getBreedById(@PathVariable Long id) {
+        String breed = dogService.retrieveDogBreedById(id);
+        return new ResponseEntity<>(breed, HttpStatus.OK);
     }
 
-    @GetMapping("/name")
+    @GetMapping("/dogs/name")
     public ResponseEntity<List<String>> getDogNames() {
         List<String> list = dogService.retrieveDogNames();
         return new ResponseEntity<>(list, HttpStatus.OK);
