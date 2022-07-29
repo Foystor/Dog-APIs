@@ -1,6 +1,6 @@
-package com.udacity.bootstrap.service;
+package com.udacity.DogRestApi.service;
 
-import com.udacity.bootstrap.entity.Dog;
+import com.udacity.DogRestApi.entity.Dog;
 
 import java.util.List;
 

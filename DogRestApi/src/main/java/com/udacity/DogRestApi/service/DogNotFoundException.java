@@ -1,4 +1,4 @@
-package com.udacity.bootstrap.service;
+package com.udacity.DogRestApi.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

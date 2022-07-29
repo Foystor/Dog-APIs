@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.udacity</groupId>
-	<artifactId>bootstrap</artifactId>
+	<artifactId>DogRestApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bootstrap</name>
+	<name>DogRestApi</name>
 	<description>Build a Dog REST API</description>
 	<properties>
 		<java.version>17</java.version>

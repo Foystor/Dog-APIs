@@ -1,4 +1,4 @@
-package com.udacity.bootstrap.entity;
+package com.udacity.DogRestApi.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
