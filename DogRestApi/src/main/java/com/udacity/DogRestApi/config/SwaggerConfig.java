@@ -6,6 +6,7 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -20,15 +21,19 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build()
-                .useDefaultResponseMessages(false);
+                .useDefaultResponseMessages(false)
+                .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Dog REST API")
                 .description("This API returns a list of dogs.")
-                .termsOfServiceUrl("https://github.com/Foystor/dog-web-services")
                 .version("1.0")
+                .termsOfServiceUrl("https://github.com/Foystor/dog-web-services")
+                .contact(new Contact("Foystor Wan", "https://github.com/Foystor", "foystor@gmail.com"))
+                .license("MIT License")
+                .licenseUrl("https://github.com/Foystor/dog-web-services/blob/main/LICENSE")
                 .build();
     }
 }
