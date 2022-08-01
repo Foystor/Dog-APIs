@@ -45,6 +45,13 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--		From Swagger 3.0, springfox-boot-starter can be replaced instead of those 2 dependencies,-->
+<!--		and the URL should be http://localhost:8080/swagger-ui/-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
